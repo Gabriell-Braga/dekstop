@@ -1,0 +1,31 @@
+<div class="banner">
+    <img src="{{ bannerGame.banner }}" alt="">
+    <div class="banner-content">
+        <div class="banner-over">
+            <h1>{{ bannerGame.name }}</h1>
+            <p>{{ bannerGame.description }}</p>
+            <a routerLink="/media/game/{{ bannerGame.id }}">View More</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1>Most Awarded Games 🏆</h1>
+    <div class="slide-container">
+        <div class="slide" #slider>
+            @for (game of games; track game.id) {
+                <div class="slide-item">
+                    <a routerLink="/media/game/{{ game.id }}">
+                        <div class="card card-games">
+                            <img class="card-image" src="{{ game.image }}" alt="{{ game.name }}">
+                            <div class="card-body">
+                                <small>{{ game.rating }}/10 ⭐</small>
+                                <h4 class="card-title">{{ game.name }}</h4>
+                                <p class="card-text">{{ game.category }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

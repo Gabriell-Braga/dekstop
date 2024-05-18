@@ -1,0 +1,17 @@
+<nav>
+    <div class="logo">
+        <a routerLink="/"><h3>dekstop.</h3></a>
+    </div>
+    <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}">Home</a></li>
+        <li><a routerLink="/games" routerLinkActive="active">Games</a></li>
+        <li><a routerLink="/musics" routerLinkActive="active">Musics</a></li>
+        <li><a routerLink="/videos" routerLinkActive="active">Videos</a></li>
+        <li><a routerLink="/artworks" routerLinkActive="active">Artworks</a></li>
+    </ul>
+    <form class="input-group">
+        <input type="text" placeholder="Search">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+</nav>

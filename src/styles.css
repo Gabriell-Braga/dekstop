@@ -1,1 +1,252 @@
-/* You can add global styles to this file, and also import other style files */
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* GLOBAL SETTINGS */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #FFC2D1;
+}
+
+a:hover, a.active, a:focus {
+    color: #FF4573;
+}
+
+/* FORMS */
+
+input {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    border: solid 3px #FF4573;
+    background: unset;
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: #FF4573;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #FFC2D1;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
+    padding: 8px;
+    border-radius: 8px 0 0 8px;
+    border: solid 3px #FF4573;
+    border-right: none;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.input-group button {
+    padding: 10px 35px;
+    background-color: #FF4573;
+    color: #fff;
+    border: solid 3px #FF4573;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.input-group button i {
+    font-size: 16px;
+}
+
+.input-group button:hover {
+    background-color: #FFC2D1;
+}
+
+/* LAYOUT */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* SLIDES */
+
+.slide{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 30px;
+    padding: 20px 15px;
+}
+
+.slide .slide-item:last-child {
+    margin-right: 300px;
+}
+
+.slide-container {
+    position: relative;
+    overflow: hidden;
+    margin: -10px -15px;
+}
+
+.slide-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #141414);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slide::-webkit-scrollbar {
+    height: 8px;
+}
+
+.slide::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px 0;
+}
+
+.slide::-webkit-scrollbar-thumb {
+    background: #FFC2D1;
+    border-radius: 4px;
+}
+
+.slide::-webkit-scrollbar-thumb:hover {
+    background: #FF4573;
+}
+
+/* BANNER */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 625px;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+}
+
+.banner .banner-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: 
+        linear-gradient(to top, #141414 0%, rgba(0, 0, 0, 0) 35%), 
+        linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 90%);
+}
+
+.banner-content .banner-over{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50%;
+    width: 30%;
+    transform: translate(0%, -50%);
+    padding: 100px;
+}
+
+.banner-content h1 {
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    margin: 0 0 20px 0;
+}
+
+.banner-content a {
+    font-size: 1em;
+    color: #FF4573;
+    width: auto;
+}
+
+.banner-content a:hover::after {
+    content: '';
+    width: auto;
+    height: 1px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: #FF4573;
+    transition: width 0.3s ease, right 0.3s ease;
+}
+
+/* CARDS */
+
+.card{
+    background-color: #1C1C1C;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 270px;
+    height: 400px;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.card:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.card .card-body{
+    padding: 0 20px 20px 20px;
+}
+
+.card .card-body h4.card-title{
+    font-size: 20px;
+    margin: 0;
+}
+
+.card .card-body p.card-text{
+    font-size: 15px;
+    margin: 0;
+}
+
+.card-games .card-image{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px 8px 0 0;
+}
