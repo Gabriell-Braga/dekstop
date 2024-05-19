@@ -9,6 +9,7 @@
 .thumbnail img{
     height: 400px;
     width: auto;
+    border-radius: 8px 8px 0 0;
 }
 
 .thumbnail-content{
@@ -31,6 +32,38 @@
     background-color: #1C1C1C;
     width: 400px;
     margin-left: 100px;
-    margin-top: -300px;
+    margin-top: -200px;
     z-index: 100;
+    border-radius: 8px;
+}
+
+.flexbox:has(.thumbnail){
+    margin-top: -50px;
+}
+
+.rate-stars{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+    overflow: hidden;
+    transition: max-width 0.7s ease;
+    max-width: 30px;
+}
+
+.rate-stars:hover {
+    max-width: 400px; /* Show all columns on hover */
+}
+
+.rate-stars i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.rate-stars i:has(~ i:hover),.rate-stars i:hover, .rate-stars i.active{
+    color: #FF4573;
+}
+
+.rate{
+    justify-content: flex-start;
+    gap: 10px;
 }

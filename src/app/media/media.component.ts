@@ -6,11 +6,12 @@ import gamesData from '../../assets/json/games.json';
 import musicsData from '../../assets/json/musics.json';
 import videosData from '../../assets/json/videos.json';
 import artworksData from '../../assets/json/artworks.json';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-media',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './media.component.html',
   styleUrl: './media.component.css'
 })
@@ -32,6 +33,12 @@ export class MediaComponent {
   id: any;
 
   data:any = {};
+  awards:any = {};
+
+  rate: number = 0;
+
+  test: string = 'Hello World!';
+  count: number = 0;
 
   constructor(route: ActivatedRoute) {
     this.type = route.snapshot.paramMap.get('type');
@@ -40,7 +47,10 @@ export class MediaComponent {
     switch (this.type) {
       case 'game':
         this.games.forEach((element: any) => {
-          if(element.id == this.id) this.data = element;
+          if(element.id == this.id){
+            this.data = element;
+            this.awards = element.awards;
+          }
         });
         break;
       case 'music':
@@ -66,5 +76,17 @@ export class MediaComponent {
 
   ngOnInit(){
     
+  }
+
+  fun(): void {
+    this.test = 'You are my hero!';
+    this.count++;
+    alert('Test message :'+this.test+' Count :'+this.count);
+  }
+
+  saveRate(rating: number){
+    this.rate = 0;
+    this.rate = rating;
+    console.log(this.rate);
   }
 }
