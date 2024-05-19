@@ -1,1 +1,42 @@
-<p>musics works!</p>
+<div class="container">
+    <div class="flexbox">
+        <h1>Musics</h1>
+        <div class="controls">
+            <button onclick="list(event)"><i class="fa-solid fa-list"></i></button>
+            <button class="active" onclick="grid(event)"><i class="fa-solid fa-border-all"></i></button>
+        </div>
+    </div>
+    <div class="grid">
+        @for (music of musics; track music.id) {
+            <div class="card">
+                <a routerLink="/media/music/{{ music.id }}">
+                    <img class="card-image" src="{{ music.image }}" alt="{{ music.name }}">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <span>{{ music.rating }}/10 ⭐</span>
+                        </div>
+                        <h4 class="card-title">{{ music.name }}</h4>
+                        <p class="card-text">{{ music.artist }}</p>
+                        <div class="card-show-hover">
+                            <hr>
+                            <div class="card-info">
+                                <span>Album: </span>
+                                <b>{{ music.album }}</b>
+                            </div>
+                            <div class="card-info">
+                                <span>Year: </span>
+                                <b>{{ music.year }}</b>
+                            </div>
+                            <p class="description">{{ music.description }}</p>
+                            <div class="text-center">
+                                <a routerLink="/media/music/{{ music.id }}">+</a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="spacing-footer"></div>

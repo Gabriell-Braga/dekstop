@@ -1,0 +1,63 @@
+footer{
+    position:absolute;
+    min-height: auto;  
+    background-color: #FF4573;
+    width: 100%;
+    padding: 20px 0 5px 0;
+}
+
+.footer{
+    color: #0a0a0a;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.footer a{
+    display: inline-block;
+    width: fit-content;
+}
+
+.footer .logo h3{
+    color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.footer-copy{
+    color: #0a0a0a;
+    font-size: 12px;
+    margin: 0;
+}
+
+.footer-copy a::after, .footer-copy a.active::after, .footer-copy a:focus::after{
+    background: white;
+}
+
+.footer-copy a, .footer-copy a.active, .footer-copy a:focus{
+    color: white;
+}
+
+a::after, a.active::after, a:focus::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: #0a0a0a;
+    transition: width 0.3s ease, right 0.3s ease;
+}
+
+a:has(h3):hover::after, a:has(h3):focus::after {
+    height: 2px;
+}
+
+
+a:hover::after, a.active::after, a:focus::after {
+    width: 100%;
+    right: 0;
+}

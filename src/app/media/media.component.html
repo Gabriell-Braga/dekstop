@@ -1,0 +1,24 @@
+@if (type == 'game') {
+    <div class="game">
+        <div class="banner">
+            <img src="{{ data.banner }}" alt="">
+            <div class="banner-content"></div>
+        </div>
+        <div class="flexbox">
+            <div class="thumbnail">
+                <img src="{{ data.image }}" alt="">
+                <div class="thumbnail-content">
+                    <h1>{{ data.name }}</h1>
+                    <p>{{ data.company }} • {{ data.category }}</p>
+                    <span>{{ data.rating }}/10 ⭐</span>
+                </div>
+            </div>
+            <div class="description">
+                <h2>Description</h2>
+                <p>{{ data.long_description }}</p>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="spacing-footer"></div>

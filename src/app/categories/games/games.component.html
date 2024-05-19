@@ -1,1 +1,43 @@
-<p>games works!</p>
+<div class="container">
+    <div class="flexbox">
+        <h1>Games</h1>
+        <div class="controls">
+            <button onclick="list(event)"><i class="fa-solid fa-list"></i></button>
+            <button class="active" onclick="grid(event)"><i class="fa-solid fa-border-all"></i></button>
+        </div>
+    </div>
+    <div class="grid">
+        @for (game of games; track game.id) {
+            <div class="card">
+                <a routerLink="/media/game/{{ game.id }}">
+                    <img class="card-image" src="{{ game.image }}" alt="{{ game.name }}">
+                    <img class="card-image image-banner" src="{{ game.banner }}" alt="{{ game.name }}">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <span>{{ game.rating }}/10 ⭐</span>
+                        </div>
+                        <h4 class="card-title">{{ game.name }}</h4>
+                        <p class="card-text">{{ game.category }}</p>
+                        <div class="card-show-hover">
+                            <hr>
+                            <div class="card-info">
+                                <span>Publisher: </span>
+                                <b>{{ game.company }}</b>
+                            </div>
+                            <div class="card-info">
+                                <span>Year: </span>
+                                <b>{{ game.year }}</b>
+                            </div>
+                            <p class="description">{{ game.description }}</p>
+                            <div class="text-center">
+                                <a routerLink="/media/game/{{ game.id }}">+</a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="spacing-footer"></div>

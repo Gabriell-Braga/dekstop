@@ -1,1 +1,44 @@
-<p>artworks works!</p>
+<div class="container">
+    <div class="flexbox">
+        <h1>Artworks</h1>
+        <div class="controls">
+            <button class="active" onclick="list(event)"><i class="fa-solid fa-list"></i></button>
+            <button onclick="grid(event)"><i class="fa-solid fa-border-all"></i></button>
+        </div>
+    </div>
+    <div class="grid list">
+        @for (artwork of artworks; track artwork.id) {
+            <a routerLink="/media/artwork/{{ artwork.id }}">
+                <div class="card card-artworks">
+                    <img class="card-image" src="{{ artwork.image }}" alt="{{ artwork.name }}">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <span>#{{ $index+1 }}</span>
+                            <span>{{ artwork.price | currency:'USD':'symbol':'1.0-0' }}</span>
+                        </div>
+                        <h4 class="card-title">{{ artwork.name }}</h4>
+                        <p class="card-text">{{ artwork.artist }}</p>
+                        <div class="card-show-hover">
+                            <hr>
+                            <div class="card-info">
+                                <span>Year Created: </span>
+                                <b>{{ artwork.year_created }}</b>
+                            </div>
+                            <div class="card-info">
+                                <span>Year of Sale: </span>
+                                <b>{{ artwork.year_of_sale }}</b>
+                            </div>
+                            <div class="card-info">
+                                <span>Material: </span>
+                                <b>{{ artwork.material }}</b>
+                            </div>
+                            <span>{{ artwork.description }}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>
+
+<div class="spacing-footer"></div>

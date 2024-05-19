@@ -1,1 +1,18 @@
-<p>videos works!</p>
+<div class="container">
+    <h1>Videos</h1>
+    <div class="flexbox">
+        @for (video of videos; track $index) {
+            <a routerLink="/media/video/{{ video.id }}">
+                <div class="video">
+                    <img src="{{ video.image }}" alt="">
+                    <!-- <iframe [src]="video.link+'?autoplay=1&showinfo=0&controls=0&modestbranding=0&disablekb=1&fs=0&iv_load_policy=3' | safe" frameborder="0" allowfullscreen></iframe> -->
+                    <div class="video-description">
+                        <h3>{{ video.name }}</h3>
+                        <p>{{ video.artist }}</p>
+                        <p>{{ video.views | shortenNumber }} Views • {{ video.year }}</p>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>

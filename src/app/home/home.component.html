@@ -11,21 +11,163 @@
 <div class="container">
     <h1>Most Awarded Games 🏆</h1>
     <div class="slide-container">
-        <div class="slide" #slider>
+        <button class="nav nav-left" onclick="slideLeft(event)"><i class="fas fa-chevron-left"></i></button>
+        <div class="slide">
             @for (game of games; track game.id) {
                 <div class="slide-item">
                     <a routerLink="/media/game/{{ game.id }}">
                         <div class="card card-games">
                             <img class="card-image" src="{{ game.image }}" alt="{{ game.name }}">
                             <div class="card-body">
-                                <small>{{ game.rating }}/10 ⭐</small>
+                                <div class="card-info">
+                                    <span>#{{ $index+1 }}</span>
+                                    <span>{{ game.rating }}/10 ⭐</span>
+                                </div>
                                 <h4 class="card-title">{{ game.name }}</h4>
                                 <p class="card-text">{{ game.category }}</p>
+                                <div class="card-show-hover">
+                                    <hr>
+                                    <div class="card-info">
+                                        <span>Publisher: </span>
+                                        <b>{{ game.company }}</b>
+                                    </div>
+                                    <div class="card-info">
+                                        <span>Year: </span>
+                                        <b>{{ game.year }}</b>
+                                    </div>
+                                    <div class="text-center">
+                                        <a routerLink="/media/game/{{ game.id }}">+</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
             }
         </div>
+        <button class="nav nav-right" onclick="slideRight(event)"><i class="fas fa-chevron-right"></i></button>
     </div>
 </div>
+
+<div class="container">
+    <h1>Featured Music 🔥</h1>  
+    <div class="secondary-banner">
+        <img src="{{ bannerMusic.image }}" alt="">
+        <div class="banner-content">
+            <div class="banner-over">
+                <span>#{{ bannerMusic.id }} This Week - {{ bannerMusic.rating }}/10 ⭐</span>
+                <h1>{{ bannerMusic.name }}</h1>
+                <p>{{ bannerMusic.artist }}</p>
+                <p>"{{ bannerMusic.long_description }}"</p>
+                <p><a routerLink="/media/music/{{ bannerMusic.id }}">View More</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Todays Top Hits 🎹</h1>
+    <div class="slide-container">
+        <button class="nav nav-left" onclick="slideLeft(event)"><i class="fas fa-chevron-left"></i></button>
+        <div class="slide">
+            @for (music of musics; track music.id) {
+                <div class="slide-item">
+                    <a routerLink="/media/music/{{ music.id }}">
+                        <div class="card card-musics">
+                            <img class="card-image" src="{{ music.image }}" alt="{{ music.name }}">
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <span>#{{ $index+1 }}</span>
+                                    <span>{{ music.rating }}/10 ⭐</span>
+                                </div>
+                                <h4 class="card-title">{{ music.name }}</h4>
+                                <p class="card-text">{{ music.artist }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+        <button class="nav nav-right" onclick="slideRight(event)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Top 3 Most Viewed Videos 📊</h1>
+    <div class="flexbox">
+        @for (video of videos.slice(0, 3); track $index) {
+            <a routerLink="/media/video/{{ video.id }}">
+                <div class="video">
+                    <img src="{{ video.image }}" alt="">
+                    <!-- <iframe [src]="video.link+'?autoplay=1&showinfo=0&controls=0&modestbranding=0&disablekb=1&fs=0&iv_load_policy=3' | safe" frameborder="0" allowfullscreen></iframe> -->
+                    <div class="video-description">
+                        <h3>{{ video.name }}</h3>
+                        <p>{{ video.artist }}</p>
+                        <p>{{ video.views | shortenNumber }} Views • {{ video.year }}</p>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>
+
+<div class="container">
+    <h1>Featured Art 🔥</h1>  
+    <div class="secondary-banner">
+        <img src="{{ bannerArtwork.image }}" alt="">
+        <div class="banner-content">
+            <div class="banner-over">
+                <span>{{ bannerArtwork.year_created }} - {{ bannerArtwork.material }}</span>
+                <h1>{{ bannerArtwork.name }}</h1>
+                <p>{{ bannerArtwork.artist }}</p>
+                <p>"{{ bannerArtwork.description }}"</p>
+                <p><a routerLink="/media/artwork/{{ bannerArtwork.id }}">View More</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="flexbox">
+        <h1>Most Expensives Artworks 🎨</h1>
+        <div class="controls">
+            <button class="active" onclick="list(event)"><i class="fa-solid fa-list"></i></button>
+            <button onclick="grid(event)"><i class="fa-solid fa-border-all"></i></button>
+        </div>
+    </div>
+    <div class="grid list">
+        @for (artwork of artworks; track artwork.id) {
+            <a routerLink="/media/artwork/{{ artwork.id }}">
+                <div class="card card-artworks">
+                    <img class="card-image" src="{{ artwork.image }}" alt="{{ artwork.name }}">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <span>#{{ $index+1 }}</span>
+                            <span>{{ artwork.price | currency:'USD':'symbol':'1.0-0' }}</span>
+                        </div>
+                        <h4 class="card-title">{{ artwork.name }}</h4>
+                        <p class="card-text">{{ artwork.artist }}</p>
+                        <div class="card-show-hover">
+                            <hr>
+                            <div class="card-info">
+                                <span>Year Created: </span>
+                                <b>{{ artwork.year_created }}</b>
+                            </div>
+                            <div class="card-info">
+                                <span>Year of Sale: </span>
+                                <b>{{ artwork.year_of_sale }}</b>
+                            </div>
+                            <div class="card-info">
+                                <span>Material: </span>
+                                <b>{{ artwork.material }}</b>
+                            </div>
+                            <span>{{ artwork.description }}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>
+
+<div class="spacing-footer"></div>

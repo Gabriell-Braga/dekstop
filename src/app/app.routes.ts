@@ -5,6 +5,7 @@ import { VideosComponent } from './categories/videos/videos.component';
 import { ArtworksComponent } from './categories/artworks/artworks.component';
 import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './home/home.component';
+import { MediaComponent } from './media/media.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     {
         path: 'artworks',
         component: ArtworksComponent
+    },
+    {
+        path: 'media/:type/:id',
+        component: MediaComponent
     }
 ];
 

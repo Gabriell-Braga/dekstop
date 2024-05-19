@@ -1,0 +1,36 @@
+.banner{
+    height: 300px;
+}
+
+.banner img{
+    object-position: left center;
+}
+
+.thumbnail img{
+    height: 400px;
+    width: auto;
+}
+
+.thumbnail-content{
+    padding: 20px;
+}
+
+.thumbnail-content *{
+    margin: 0;
+}
+
+.thumbnail-content p{
+    margin: 7px 0;
+}
+
+.description{
+    padding: 0 150px 150px 150px;
+}
+
+.thumbnail{
+    background-color: #1C1C1C;
+    width: 400px;
+    margin-left: 100px;
+    margin-top: -300px;
+    z-index: 100;
+}

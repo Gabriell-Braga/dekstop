@@ -1,0 +1,26 @@
+.card:has(.card-show-hover):hover{
+    height: 500px;
+}
+
+.card a{
+    height: 100%;
+}
+
+.grid:not(.list) .card .description{
+    display: none;
+}
+
+.grid.list .card-image{
+    display: block;
+    height: 100%;
+    width: 550px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid{
+        grid-template-columns: 300px;
+        row-gap: 20px;
+        justify-content: center;
+        justify-items: center;
+    }
+}

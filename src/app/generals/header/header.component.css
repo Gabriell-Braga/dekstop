@@ -49,3 +49,50 @@ a:hover::after, a.active::after, a:focus::after {
     width: 100%;
     right: 0;
 }
+
+.menu-toggle i{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu-toggle i.active{
+        display: block;
+    }
+
+    .menu-items {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.2s linear;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        background-color: #0a0a0a;
+        padding: 10px 0;
+        height: 100%;
+    }
+
+    .menu-items.active {    
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.2s linear;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle i{
+        color: #FF4573;
+    }
+
+    form.input-group{
+        display: none;
+    }
+}

@@ -2,9 +2,12 @@
     <div class="logo">
         <a routerLink="/"><h3>dekstop.</h3></a>
     </div>
-    <ul>
-        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-            true}">Home</a></li>
+    <div class="menu-toggle" onclick="toggleMenu(event)">
+        <i class="fa-solid fa-bars active"></i>
+        <i class="fa-solid fa-x"></i>
+    </div>
+    <ul class="menu-items">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
         <li><a routerLink="/games" routerLinkActive="active">Games</a></li>
         <li><a routerLink="/musics" routerLinkActive="active">Musics</a></li>
         <li><a routerLink="/videos" routerLinkActive="active">Videos</a></li>
