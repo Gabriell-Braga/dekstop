@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/",
+    "/artworks",
+    "/games",
+    "/musics",
+    "/search",
+    "/videos"
+  ]
+}

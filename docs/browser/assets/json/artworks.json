@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "name": "Salvator Mundi",
+        "artist": "Leonardo da Vinci",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Leonardo_da_Vinci%2C_Salvator_Mundi%2C_c.1500%2C_oil_on_walnut%2C_45.4_%C3%97_65.6_cm.jpg",
+        "description": "Salvator Mundi is a painting attributed to Leonardo da Vinci, depicting Jesus Christ as the Savior of the World.",
+        "price": 450300000,
+        "year_of_sale": 2017,
+        "year_created": 1490,
+        "material": "Oil on walnut"
+    },
+    {
+        "id": 2,
+        "name": "Interchange",
+        "artist": "Willem de Kooning",
+        "image": "https://m.media-amazon.com/images/I/81ksJTS41SL.jpg",
+        "description": "Interchange is an abstract expressionist painting by Willem de Kooning.",
+        "price": 300000000,
+        "year_of_sale": 2015,
+        "year_created": 1955,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 3,
+        "name": "The Card Players",
+        "artist": "Paul Cézanne",
+        "image": "https://painting-shop.co.uk/wp-content/uploads/2018/04/The-Card-Players-Paul-Cezanne-reproducere.jpg",
+        "description": "The Card Players is a series of oil paintings by the French Post-Impressionist artist Paul Cézanne.",
+        "price": 250000000,
+        "year_of_sale": 2011,
+        "year_created": 1894,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 4,
+        "name": "Nafea Faa Ipoipo (When Will You Marry?)",
+        "artist": "Paul Gauguin",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Paul_Gauguin%2C_Nafea_Faa_Ipoipo%3F_1892%2C_oil_on_canvas%2C_101_x_77_cm.jpg",
+        "description": "Nafea Faa Ipoipo (When Will You Marry?) is an oil painting by Paul Gauguin.",
+        "price": 210000000,
+        "year_of_sale": 2015,
+        "year_created": 1892,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 5,
+        "name": "Number 17A",
+        "artist": "Jackson Pollock",
+        "image": "https://arthive.net/res/media/img/oy800/work/b53/316281@2x.jpg",
+        "description": "Number 17A is a painting by Jackson Pollock, an influential figure in the abstract expressionist movement.",
+        "price": 200000000,
+        "year_of_sale": 2016,
+        "year_created": 1948,
+        "material": "Oil on fiberboard"
+    },
+    {
+        "id": 6,
+        "name": "No. 6 (Violet, Green and Red)",
+        "artist": "Mark Rothko",
+        "image": "https://www.arsmundi.de/thumbnails/e5/90/f9/1615461640/902505.R1_1_x.jpg",
+        "description": "No. 6 (Violet, Green and Red) is an abstract painting by Mark Rothko.",
+        "price": 186000000,
+        "year_of_sale": 2014,
+        "year_created": 1951,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 7,
+        "name": "Les Femmes d'Alger (Version O)",
+        "artist": "Pablo Picasso",
+        "image": "https://i.etsystatic.com/23922958/r/il/55d973/3416377318/il_fullxfull.3416377318_f9nw.jpg",
+        "description": "Les Femmes d'Alger (Version O) is a painting by Pablo Picasso, part of a series inspired by Delacroix's work.",
+        "price": 179400000,
+        "year_of_sale": 2015,
+        "year_created": 1955,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 8,
+        "name": "Nu Couché",
+        "artist": "Amedeo Modigliani",
+        "image": "https://media.cnn.com/api/v1/images/stellar/prod/180424115408-modigliani-nu-couche-1917.jpg?q=w_2000,c_fill",
+        "description": "Nu Couché is a painting by Amedeo Modigliani, known for its sensual and modern portrayal of the nude.",
+        "price": 170400000,
+        "year_of_sale": 2015,
+        "year_created": 1917,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 9,
+        "name": "Masterpiece",
+        "artist": "Roy Lichtenstein",
+        "image": "https://www.tallengestore.com/cdn/shop/products/RoyLichtenstein-Masterpiece-PopArtworkPainting_1_1.jpg?v=1586869447",
+        "description": "Masterpiece is a pop art painting by Roy Lichtenstein.",
+        "price": 165000000,
+        "year_of_sale": 2017,
+        "year_created": 1962,
+        "material": "Oil on canvas"
+    },
+    {
+        "id": 10,
+        "name": "Pendant Portraits of Wedding",
+        "artist": "Rembrandt",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Pendant_portraits_of_Maerten_Soolmans_and_Oopjen_Coppit.jpeg",
+        "description": "Pendant Portraits of Maerten Soolmans and Oopjen Coppit are two full-length wedding portraits painted by Rembrandt.",
+        "price": 180000000,
+        "year_of_sale": 2016,
+        "year_created": 1634,
+        "material": "Oil on canvas"
+    }
+]
