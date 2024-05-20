@@ -12,9 +12,9 @@ Welcome to the Dekstop project! This README will guide you through the presentat
 
 ## Links
 
-- [Project Presentation](https://app.pitch.com/app/player/a8240ec0-4651-45c5-a95b-76c341a61635/d762c95a-9ef3-41a4-b320-00bf6c4bacb2)
+- [Project Presentation](https://pitch.com/v/dekstop-website-presentation-nkwikt)
 - [Live Site - Demo](https://gabriell-braga.github.io/dekstopHost/)
-- [Presentation Video](https://pitch.com/v/dekstop-website-presentation-nkwikt)
+- [Presentation Video](https://drive.google.com/file/d/1H4fiU-wwbXYKMMbSJ4G7Ga8Ib5CPMK-c/view)
 
 ### Attention!
 
