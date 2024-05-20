@@ -9,7 +9,7 @@
     <div class="grid">
         @for (music of musics; track music.id) {
             <div class="card">
-                <a routerLink="/media/music/{{ music.id }}">
+                <a routerLink="/media/music/{{ music.id }}/0">
                     <img class="card-image" src="{{ music.image }}" alt="{{ music.name }}">
                     <div class="card-body">
                         <div class="card-info">
@@ -29,7 +29,7 @@
                             </div>
                             <p class="description">{{ music.description }}</p>
                             <div class="text-center">
-                                <a routerLink="/media/music/{{ music.id }}">+</a>
+                                <a routerLink="/media/music/{{ music.id }}/0">+</a>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
         <div class="banner-over">
             <h1>{{ bannerGame.name }}</h1>
             <p>{{ bannerGame.description }}</p>
-            <a routerLink="/media/game/{{ bannerGame.id }}">View More</a>
+            <a routerLink="/media/game/{{ bannerGame.id }}/0">View More</a>
         </div>
     </div>
 </div>
@@ -15,7 +15,7 @@
         <div class="slide">
             @for (game of games; track game.id) {
                 <div class="slide-item">
-                    <a routerLink="/media/game/{{ game.id }}">
+                    <a routerLink="/media/game/{{ game.id }}/0">
                         <div class="card card-games">
                             <img class="card-image" src="{{ game.image }}" alt="{{ game.name }}">
                             <div class="card-body">
@@ -36,7 +36,7 @@
                                         <b>{{ game.year }}</b>
                                     </div>
                                     <div class="text-center">
-                                        <a routerLink="/media/game/{{ game.id }}">+</a>
+                                        <a routerLink="/media/game/{{ game.id }}/0">+</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
         <div class="slide">
             @for (music of musics; track music.id) {
                 <div class="slide-item">
-                    <a routerLink="/media/music/{{ music.id }}">
+                    <a routerLink="/media/music/{{ music.id }}/0">
                         <div class="card card-musics">
                             <img class="card-image" src="{{ music.image }}" alt="{{ music.name }}">
                             <div class="card-body">
@@ -96,10 +96,9 @@
     <h1>Top 3 Most Viewed Videos 📊</h1>
     <div class="flexbox">
         @for (video of videos.slice(0, 3); track $index) {
-            <a routerLink="/media/video/{{ video.id }}">
+            <a routerLink="/media/video/{{ video.id }}/0">
                 <div class="video">
                     <img src="{{ video.image }}" alt="">
-                    <!-- <iframe [src]="video.link+'?autoplay=1&showinfo=0&controls=0&modestbranding=0&disablekb=1&fs=0&iv_load_policy=3' | safe" frameborder="0" allowfullscreen></iframe> -->
                     <div class="video-description">
                         <h3>{{ video.name }}</h3>
                         <p>{{ video.artist }}</p>
@@ -121,7 +120,7 @@
                 <h1>{{ bannerArtwork.name }}</h1>
                 <p>{{ bannerArtwork.artist }}</p>
                 <p>"{{ bannerArtwork.description }}"</p>
-                <p><a routerLink="/media/artwork/{{ bannerArtwork.id }}">View More</a></p>
+                <p><a routerLink="/media/artwork/{{ bannerArtwork.id }}/0">View More</a></p>
             </div>
         </div>
     </div>
@@ -137,7 +136,7 @@
     </div>
     <div class="grid list">
         @for (artwork of artworks; track artwork.id) {
-            <a routerLink="/media/artwork/{{ artwork.id }}">
+            <a routerLink="/media/artwork/{{ artwork.id }}/0">
                 <div class="card card-artworks">
                     <img class="card-image" src="{{ artwork.image }}" alt="{{ artwork.name }}">
                     <div class="card-body">

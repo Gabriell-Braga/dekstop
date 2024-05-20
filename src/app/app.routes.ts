@@ -6,6 +6,7 @@ import { ArtworksComponent } from './categories/artworks/artworks.component';
 import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { MediaComponent } from './media/media.component';
+import { SearchComponent } from './search/search.component';
 
 export const routes: Routes = [
     {
@@ -29,8 +30,12 @@ export const routes: Routes = [
         component: ArtworksComponent
     },
     {
-        path: 'media/:type/:id',
+        path: 'media/:type/:id/:rate',
         component: MediaComponent
+    },
+    {
+        path: 'search',
+        component: SearchComponent
     }
 ];
 

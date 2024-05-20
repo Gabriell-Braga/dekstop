@@ -20,7 +20,7 @@ import artworksData from '../../assets/json/artworks.json';
 export class HomeComponent implements OnInit{
 
   ngOnInit(){
-    console.log('a');
+    
   }
 
   // games

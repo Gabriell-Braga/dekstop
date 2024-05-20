@@ -9,7 +9,7 @@
     <div class="grid">
         @for (game of games; track game.id) {
             <div class="card">
-                <a routerLink="/media/game/{{ game.id }}">
+                <a routerLink="/media/game/{{ game.id }}/0">
                     <img class="card-image" src="{{ game.image }}" alt="{{ game.name }}">
                     <img class="card-image image-banner" src="{{ game.banner }}" alt="{{ game.name }}">
                     <div class="card-body">
@@ -30,7 +30,7 @@
                             </div>
                             <p class="description">{{ game.description }}</p>
                             <div class="text-center">
-                                <a routerLink="/media/game/{{ game.id }}">+</a>
+                                <a routerLink="/media/game/{{ game.id }}/0">+</a>
                             </div>
                         </div>
                     </div>

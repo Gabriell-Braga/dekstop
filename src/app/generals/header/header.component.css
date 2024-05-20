@@ -54,7 +54,19 @@ a:hover::after, a.active::after, a:focus::after {
     display: none;
 }
 
+ul li:last-child{
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
+
+    ul li:last-child{
+        display: block;
+    }
+
+    ul li:last-child form{
+        display: block;
+    }
 
     .menu-toggle i.active{
         display: block;

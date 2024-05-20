@@ -9,10 +9,24 @@
                 <img src="{{ data.image }}" alt="">
                 <div class="thumbnail-content">
                     <h1>{{ data.name }}</h1>
-                    <p>{{ data.company }} • {{ data.category }}</p>
+                    <div class="flexbox">
+                        <span>{{ data.company }}</span>
+                        <span>•</span>
+                        <span>{{ data.category }}</span>
+                    </div>
                     <div class="flexbox">
                         <span>{{ data.year }}</span>
                         <span>{{ data.rating }}/10 ⭐</span>
+                    </div>
+                    <hr>
+                    <div class="rate flexbox">
+                        <h3>Your Rate</h3>
+                        <div class="rate-stars">
+                            @for (i of [1,2,3,4,5,6,7,8,9,10]; track $index)
+                            {
+                                <a routerLink="/media/game/{{ data.id }}/{{ i }}"><i class="fas fa-star" [ngClass]="{'active': i<=rate}" ></i></a>   
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,12 +39,44 @@
                         <p>• {{ award }}</p>
                     }
                 </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (type == 'music') {
+    <div class="container">
+        <div class="flexbox align-top centralize">
+            <div class="card">
+                <a routerLink="/media/music/{{ data.id }}/0">
+                    <img class="card-image" src="{{ data.image }}" alt="{{ data.name }}">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <b>#{{ data.id }} This Week</b>
+                            <b>{{ data.rating }}/10 ⭐</b>
+                        </div>
+                        <div class="card-info">
+                            <b>Year</b>
+                            <span>{{ data.year }}</span>
+                        </div>
+                        <div class="card-info">
+                            <b>Category</b>
+                            <span>{{ data.category }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="music-description">
+                <h1>{{ data.name }}</h1>
+                <h3>{{ data.artist }} • {{ data.album }}</h3>
+                <p>{{ data.long_description }}</p>
+                <hr>
                 <div class="rate flexbox">
-                    <h2>Your Rate</h2>
+                    <h3>Your Rate</h3>
                     <div class="rate-stars">
                         @for (i of [1,2,3,4,5,6,7,8,9,10]; track $index)
                         {
-                            <i class="fas fa-star" [ngClass]="{'active': rate >= i}" (mouseDown)="fun()" (mouseDown)="rate = i;"></i>        
+                            <a routerLink="/media/music/{{ data.id }}/{{ i }}"><i class="fas fa-star" [ngClass]="{'active': i<=rate}"></i></a>   
                         }
                     </div>
                 </div>
@@ -39,4 +85,55 @@
     </div>
 }
 
-<div class="spacing-footer"></div>
+@if (type == 'video') {
+    <div class="container flexbox centralize">
+        <div class="video-media">
+            <iframe [src]="data.link+'?autoplay=1&showinfo=0&modestbranding=0&disablekb=1&fs=0&iv_load_policy=3' | safe" frameborder="0" allowfullscreen></iframe>
+            <div class="flexbox">
+                <h1>{{ data.name }}</h1>
+            </div>
+            <div class="flexbox">
+                <h3>{{ data.artist }}</h3>
+                <div class="likes">
+                    <a [ngClass]="{'active': like == 1}" routerLink="/media/video/{{ data.id }}/1"><i class="fa-solid fa-thumbs-up"></i>{{ data.likes | shortenNumber }} </a>
+                    <a [ngClass]="{'active': like == 2}" routerLink="/media/video/{{ data.id }}/2"><i class="fa-solid fa-thumbs-down"></i></a>
+                </div>
+            </div>
+            <span>{{ data.views | shortenNumber }} Views</span>
+            <p>{{ data.description }}</p>
+        </div>
+    </div>
+}
+
+@if (type == 'artwork') {
+    <div class="container">
+        <div class="artwork-media flexbox">
+            <img src="{{ data.image }}" alt="">
+            <div class="artwork-content">
+                <div class="flexbox">
+                    <span>#{{ data.id }} More Expensive Sale</span>
+                    <span>{{ data.price | currency:'USD':'symbol':'1.0-0' }}</span>
+                </div>
+                <h1>{{ data.name }}</h1>
+                <h3>{{ data.artist }}</h3>
+                <hr>
+                <div class="flexbox">
+                    <span>Year Created: </span>
+                    <b>{{ data.year_created }}</b>
+                </div>
+                <div class="flexbox">
+                    <span>Year of Sale: </span>
+                    <b>{{ data.year_of_sale }}</b>
+                </div>
+                <div class="flexbox">
+                    <span>Material: </span>
+                    <b>{{ data.material }}</b>
+                </div>
+                <hr>
+                <span>{{ data.description }}</span>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- <div class="spacing-footer"></div> -->

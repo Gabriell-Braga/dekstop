@@ -7,11 +7,13 @@ import musicsData from '../../assets/json/musics.json';
 import videosData from '../../assets/json/videos.json';
 import artworksData from '../../assets/json/artworks.json';
 import { CommonModule } from '@angular/common';
+import { SafePipe } from '../safe.pipe';
+import { ShortenNumberPipe } from '../shorten-number.pipe';
 
 @Component({
   selector: 'app-media',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, SafePipe, ShortenNumberPipe],
   templateUrl: './media.component.html',
   styleUrl: './media.component.css'
 })
@@ -31,18 +33,53 @@ export class MediaComponent {
 
   type: any;
   id: any;
+  rate: any;
+  like: any;
+
 
   data:any = {};
   awards:any = {};
 
-  rate: number = 0;
-
-  test: string = 'Hello World!';
-  count: number = 0;
-
   constructor(route: ActivatedRoute) {
     this.type = route.snapshot.paramMap.get('type');
     this.id = route.snapshot.paramMap.get('id');
+    this.rate = route.snapshot.paramMap.get('rate');
+
+    if(this.rate && this.rate != 0 && this.type == 'game'){
+      const fs = require('fs');
+      var gamesFile = 'src/assets/json/games.json';
+      var games = JSON.parse(fs.readFileSync(gamesFile).toString());
+      games.forEach((game: any) =>{
+          if(game.id == this.id){
+              game.rate = this.rate;
+          }
+      });
+      fs.writeFileSync(gamesFile, JSON.stringify(games));
+    }
+
+    if(this.rate && this.rate != 0 && this.type == 'music'){
+      const fs = require('fs');
+      var musicsFile = 'src/assets/json/musics.json';
+      var musics = JSON.parse(fs.readFileSync(musicsFile).toString());
+      musics.forEach((music: any) =>{
+          if(music.id == this.id){
+            music.rate = this.rate;
+          }
+      });
+      fs.writeFileSync(musicsFile, JSON.stringify(musics));
+    }
+
+    if(this.rate && this.rate != 0 && this.type == 'video'){
+      const fs = require('fs');
+      var videosFile = 'src/assets/json/videos.json';
+      var videos = JSON.parse(fs.readFileSync(videosFile).toString());
+      videos.forEach((video: any) =>{
+          if(video.id == this.id){
+            video.like = this.rate;
+          }
+      });
+      fs.writeFileSync(videosFile, JSON.stringify(videos));
+    }
 
     switch (this.type) {
       case 'game':
@@ -50,17 +87,25 @@ export class MediaComponent {
           if(element.id == this.id){
             this.data = element;
             this.awards = element.awards;
+            this.rate = element.rate;
           }
         });
         break;
       case 'music':
         this.musics.forEach((element: any) => {
-          if(element.id == this.id) this.data = element;
+          if(element.id == this.id){
+            this.data = element;
+            this.rate = element.rate;
+          } 
         });
         break;
       case 'video':
         this.videos.forEach((element: any) => {
-          if(element.id == this.id) this.data = element;
+          if(element.id == this.id){
+            this.data = element;
+            this.like = element.like;
+            console.log(element.like)
+          }
         });
         break;
       case 'artwork':
@@ -76,17 +121,5 @@ export class MediaComponent {
 
   ngOnInit(){
     
-  }
-
-  fun(): void {
-    this.test = 'You are my hero!';
-    this.count++;
-    alert('Test message :'+this.test+' Count :'+this.count);
-  }
-
-  saveRate(rating: number){
-    this.rate = 0;
-    this.rate = rating;
-    console.log(this.rate);
   }
 }
