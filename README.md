@@ -74,4 +74,4 @@ Open your browser and navigate to `http://localhost:4200/`. The app will automat
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.
