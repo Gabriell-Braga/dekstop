@@ -1,27 +1,67 @@
-# Dekstop
+# Dekstop Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Welcome to the Dekstop project! This README will guide you through the presentation, video and steps to install, set up, and run the project.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before you begin, ensure you have met the following requirements:
 
-## Build
+- Node.js (version 14.x or higher)
+- npm (version 6.x or higher) or yarn (version 1.x or higher)
+- Angular CLI (version 12.x or higher)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can download Node.js and npm from [nodejs.org](https://nodejs.org/). To install Angular CLI globally, use the following command:
 
-## Running unit tests
+```bash
+npm install -g @angular/cli
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+To install the project, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
 
-## Further help
+```bash
+git clone https://github.com/your-username/dekstop.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navigate to the project directory:
+
+```bash
+cd dekstop
+```
+
+3. Install the dependencies:
+
+Using npm:
+
+```bash
+npm install
+```
+
+## Running the Project
+
+To run the project locally, use the following command:
+
+Using npm:
+
+```bash
+ng serve
+```
+
+Open your browser and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
